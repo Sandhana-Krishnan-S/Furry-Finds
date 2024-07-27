@@ -1,0 +1,45 @@
+.main-cover {
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content {
+    width: 50dvw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-content h4 {
+    margin: 24px 0px;
+    color: #F43299;
+}
+
+.main-content h1 {
+    color: #444B59;
+    font-size: 54px;
+    width: 60%;
+}
+
+.main-content p {
+    margin: 24px 0px;
+    width: 70%;
+    font-size: 16px;
+    word-spacing: 2px;
+    line-height: 1.5;
+}
+
+.main-content button {
+    color: white;
+    background-color: #F19ED2;
+    width: 25%;
+    height: 50px;
+    border: 1px solid #444B59;
+    border-radius: 6px;
+}
+
+.main-content button span {
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}

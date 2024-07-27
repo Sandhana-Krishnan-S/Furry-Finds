@@ -1,0 +1,30 @@
+.home-contnt-why {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-content {
+    margin-top: 32px;
+    margin-right: 12vw;
+    width: 50dvw;
+}
+
+.left-content h2 {
+    margin: 32px 0px;
+}
+
+.para {
+    margin: 32px 0px;
+}
+
+.para h3 {
+    margin: 16px 0px;
+    font-size: 24px;
+    color: #444B59;
+}
+
+.para p {
+    font-size: 16px;
+    word-spacing: 2px;
+    line-height: 1.5;   
+}
