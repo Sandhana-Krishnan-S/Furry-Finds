@@ -1,0 +1,39 @@
+
+.navBar {
+    max-width: 100vw;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    padding: 32px 124px;
+}
+
+.logo h2 {
+    color: #f43299;
+    font-weight: 600;
+    font-family: cursive;
+}
+
+.navList {
+    margin-left: 420px;
+}
+
+.navList ul {
+    padding: 32px 124px 32px 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navList ul li {
+    margin: 0px  0px  0px  64px;
+    color: #444B59;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: inherit;
+}

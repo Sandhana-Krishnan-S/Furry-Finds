@@ -1,0 +1,140 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: #444B59;
+}
+
+.color {
+    color: #5C4033;
+}
+
+.formStyle {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgContainer {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}
+
+.cover {
+    /* width: 100%; 
+    height: 100%;  */
+    object-fit: cover;
+    object-position: center;
+    overflow: -moz-hidden-unscrollable;
+    width: auto;
+    height: 80vh;
+    flex-shrink: 0;
+    float: right;
+}
+
+.form {
+    color: #444B59;
+    margin-left: 128px;
+    margin-top: 32px;
+    width: 50dvw;
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    color: #444B59;
+    /* margin: 10px; */
+    margin-bottom: 4px;
+    font-weight: bolder;
+}
+
+p {
+    font-weight: 400;
+    color: #444B59;
+}
+
+#heading {
+    /* padding-left: 10px;   */
+    margin: 0px;
+    margin-bottom: 20px;
+    color: #444B59;
+}
+
+label {
+    margin: 20px 0px;
+    font-size: 20px;
+    color: #444B59;
+}
+
+.inputbox {
+    margin-left: 20px 0px;
+    height: 40px;
+    width: 32dvw;
+    border: 1px gray solid;
+    border-radius: 10px;
+    font-size: 16px;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.unscrollable-container {
+    overflow: hidden;
+}
+
+
+.submit-btn {
+    margin-top: 8px;
+    margin-left: 20px , 0px;
+    height: 40px;
+    width: 33dvw;
+    border-radius: 10px;
+    background-color: #F19ED2;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.submit-btn:disabled {
+    margin-top: 8px;
+    margin-left: 20px , 0px;
+    height: 40px;
+    width: 33dvw;
+    border-radius: 10px;
+    background-color: #808080;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.checkbox-btn {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin: 10px 0px;
+}
+
+.terms {
+    margin-left: 10px;
+}
+
+.check {
+    background-color: lightgreen;
+}
+
+span {
+    color: #C774A8;
+    text-decoration: underline;
+}
+
+#buttonOnLogin {
+    margin-left: 24%;
+    margin-top: 20px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
