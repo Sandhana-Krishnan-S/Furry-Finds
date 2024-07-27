@@ -60,7 +60,7 @@ export default function Register() {
           </button>
         </div>
         <div className="imgContainer">
-          <img src={signUpCover} alt="no img" className="cover" />
+          <img src={signUpCover} alt="no img" className="cover-img" />
         </div>
       </div>
     </div>

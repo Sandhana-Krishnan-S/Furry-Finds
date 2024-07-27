@@ -1,0 +1,40 @@
+.About-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 128px;
+}
+
+.About-content h2 {
+    color: #444B59;
+    margin: 16px 0px;
+}
+
+.About-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 32px 0px;
+}
+
+.about-section {
+    margin: 0px 16px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.about-section .text {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.about-section .text p , 
+.about-section .text h2 {
+    color: #444B59;
+    word-spacing: 2px;
+    line-height: 1.5;
+}

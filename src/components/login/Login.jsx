@@ -59,7 +59,7 @@ export default function Login() {
           </button>
         </div>
         <div className="imgContainer">
-          <img src={cover} alt="Cover" className="cover" />
+          <img src={cover} alt="Cover" className="cover-img" />
         </div>
       </div>
     </div>

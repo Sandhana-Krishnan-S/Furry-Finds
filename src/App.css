@@ -5,6 +5,7 @@ body {
   display: flex;
   width: 100dvw;
   height: 100vh;
+  font-family: 'Fira Code', monospace;
 }
 
 * {
