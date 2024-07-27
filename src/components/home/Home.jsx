@@ -8,12 +8,14 @@ import '../../styles/Home/style.css'
 
 export default function Home() {
   return (
-    <div className='home'>
+    <>
       <NavBar />
+    <div className='home'>
       <HomeView />
       <HomeCategory />
       <img src={breaker} alt="" />
       <HomeContent />
     </div>
+    </>
   )
 }
