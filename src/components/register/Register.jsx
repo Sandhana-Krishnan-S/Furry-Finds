@@ -37,8 +37,8 @@ export default function Register() {
       <div className="formStyle">
         <div className="form">
           <h2>Welcome!</h2>
-          <h2>DineOn, Way to Food Heaven!</h2>
-          <p id="heading">Indulge in delightful, create an account for Food Heaven!</p>
+          <h2>Furry Finds, Care of Pets!</h2>
+          <p id="heading">Indulge in delightful, create an account for Furry Finds!</p>
           <form onSubmit={handleSubmit} >
             <label>Username : </label>
             <input type="text" value={Username} required onChange={(event) => setUsername(event.target.value)} placeholder="Enter your Username" className="inputbox" />

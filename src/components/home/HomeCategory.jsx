@@ -2,6 +2,7 @@ import React from 'react'
 import cat1 from '../../assets/images/cat1.png'
 import cat2 from '../../assets/images/cat2.png'
 import cat3 from '../../assets/images/cat3.png'
+import '../../styles/Home/HomeCategory.css'
 
 export default function HomeCategory() {
   return (
