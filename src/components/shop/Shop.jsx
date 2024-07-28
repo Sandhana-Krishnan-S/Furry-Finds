@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import NavBar from '../global/NavBar'
+import ShopView from './ShopView'
+import ShopCategory from './ShopCategory'
+import ShopSpecialList from './ShopSpecialList'
+import ShopSupportDetails from './ShopSupportDetails'
+import FoodAndAccessoryRec from './FoodAndAccessoryRec'
 
 export default function Shop() {
+  const specialListRef = useRef(null)
+
+  const scrollToSpecialList = () => {
+    if (specialListRef.current) {
+      specialListRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
   return (
     <>
       <NavBar />
-    <div>
+      <div style={{ margin: '16px 64px' }}>
+      <ShopView onScrollToSpecialList={scrollToSpecialList} />
+      <ShopCategory />
+      <ShopSpecialList ref={specialListRef} />
+      <ShopSupportDetails />
+      <FoodAndAccessoryRec />
     </div>
     </>
   )

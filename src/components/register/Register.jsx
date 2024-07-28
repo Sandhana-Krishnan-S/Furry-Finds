@@ -23,7 +23,7 @@ export default function Register() {
     if (validate()) {
       //connect db and store the value 
       login()
-      Navigate('/home')
+      Navigate('/')
     }
     else {
       //handle err

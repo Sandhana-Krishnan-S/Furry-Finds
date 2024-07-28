@@ -1,3 +1,15 @@
+@Sandhana-Krishnan-S
+    I want to do more on this project but its so late and i am tired because its day 2 of this and tomorrow is review. I dont think I did enough UI yet 
+
+**Pending-List**
+1. Page for product with reviews and detailed description
+2. Care page where care advice need to be given
+3. Donation and shelter page where It need so much work
+4. Category fills and data fills
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

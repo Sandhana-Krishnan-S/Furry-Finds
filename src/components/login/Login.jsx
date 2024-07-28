@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import cover from '../../assets/images/Login-Cover.png';
 import '../../styles/Login/style.css';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function Login() {
+  const Navigate = useNavigate()
   const { login } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -14,6 +15,7 @@ export default function Login() {
     e.preventDefault();
     console.log({email , password})
     login();
+    Navigate('/')
   }
 
    const checkboxHandler = () => {

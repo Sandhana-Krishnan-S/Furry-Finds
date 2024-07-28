@@ -1,0 +1,36 @@
+.shop-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shop-left {
+    width: 40dvw;
+    padding: 32px;
+}
+
+.shop-left h2 {
+    font-size: 64px;
+}
+
+.shop-left p {
+    width: 90%;
+    padding: 10px 0px;
+}
+
+.shop-left button {
+    background-color: #F19ED2;
+    color: white;
+    border: none;
+    margin: 8px 0px 16px;
+    padding: 10px 24px; 
+    font-size: 16px;
+    cursor: pointer; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+}
+
+.shop-left button:active {
+    background-color: darkmagenta; 
+}

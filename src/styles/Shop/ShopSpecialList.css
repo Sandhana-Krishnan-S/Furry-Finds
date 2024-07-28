@@ -1,0 +1,17 @@
+.Special-list-shop {
+    margin: 32px 0px;
+}
+
+.listing {
+    margin-top: 32px;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 48px;
+    justify-content: space-around;
+    /* margin-bottom: 1px; */
+}
+
+.listing Card {
+    flex: 1 1 calc(33.333% - 16px); 
+    max-width: calc(33.333% - 16px);
+}
