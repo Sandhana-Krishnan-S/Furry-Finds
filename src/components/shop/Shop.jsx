@@ -5,6 +5,7 @@ import ShopCategory from './ShopCategory'
 import ShopSpecialList from './ShopSpecialList'
 import ShopSupportDetails from './ShopSupportDetails'
 import FoodAndAccessoryRec from './FoodAndAccessoryRec'
+import Footer from '../global/Footer'
 
 export default function Shop() {
   const specialListRef = useRef(null)
@@ -24,6 +25,7 @@ export default function Shop() {
       <ShopSupportDetails />
       <FoodAndAccessoryRec />
     </div>
+    <Footer />
     </>
   )
 }

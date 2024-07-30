@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import cover from '../../assets/images/Login-Cover.png';
 import '../../styles/Login/style.css';
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 export default function Login() {

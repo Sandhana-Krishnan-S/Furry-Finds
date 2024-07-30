@@ -1,0 +1,28 @@
+.footer-body {
+    background-color: #F19ED2;
+    width: 100dvw;
+    height: auto;
+    color: white;
+}
+
+.footer-marign {
+    margin: 90px 124px 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-body,
+.footer-body * {
+    color: white !important;
+}
+
+.footer-body input,
+.footer-body input::placeholder {
+    color: white !important;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.footer-body img {
+    filter: brightness(0) invert(1);
+}
