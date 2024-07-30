@@ -1,6 +1,12 @@
 @Sandhana-Krishnan-S
     I want to do more on this project but its so late and i am tired because its day 2 of this and tomorrow is review. I dont think I did enough UI yet 
 
+    review done nothing happend 
+
+    Nav bar was done today and i dont feel like to code today and design 
+
+**DO SOME FUNCTIONALITY LIKE SEARCH CATEGORY AND LOGIN CART ETC.. STUPID...**
+
 **Pending-List**
 1. Page for product with reviews and detailed description
 2. Care page where care advice need to be given
