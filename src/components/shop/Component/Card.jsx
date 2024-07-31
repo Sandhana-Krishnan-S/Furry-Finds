@@ -1,16 +1,36 @@
 import React from 'react';
+import wishlist from '../../../assets/images/wishlistbtn.png'
 import './Card.css';
-export default function Card({img, title, description, price}) {
+import { Rating } from 'react-simple-star-rating';
+
+export default function Card({ img, title, description, price }) {
   return (
     <div className="Item-card">
-      <img src={img} alt={title} className="card-image" />
-      <div className="Item-card-content">
-        <div className="Item-card-content-text">
-            <h2 className="Item-card-title">{title}</h2>
-            <p className="Item-card-description">{description}</p>
+      <div className="item-image-holder">
+        <img src={img} alt="" className='item-card-img' />
+        <div className="item-card-wishlist" onClick={() => {}}>
+          <img src={wishlist} alt=""  />
         </div>
-        <p className="Item-card-price">${price.toFixed(2)}</p>
       </div>
+      <div className="item-card-content">
+        <div className="item-card-left">
+          <h4 className='title'>{title}</h4>
+          <p className='description'>{description}</p>
+          <div className="ratings-item">
+            <div className="rating-stars">
+              <Rating readonly = {true}  initialValue={3.5} size={20}/>
+            </div>
+            <div className="rating-count"><p>({123})</p></div>
+          </div>
+        </div>
+        <div className="item-card-right">
+          <p>${price}</p>
+        </div>
+      </div>
+        <div className="item-card-buttons">
+          <button className='add-Cart-btn'>Add to cart</button>
+          <button className='view-more-btn'>View more</button>
+        </div>
     </div>
   );
 }

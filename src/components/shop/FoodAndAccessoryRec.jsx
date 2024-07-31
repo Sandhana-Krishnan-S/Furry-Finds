@@ -20,7 +20,12 @@ export default function FoodAndAccessoryRec() {
         title: 'Hemp Chewstix',
         description: 'Hemp Chewstix is natural chew toys promote dental health.',
         price: 89.99
-    }]
+    }, {
+      img: Item4,
+      title: 'Whiskas',
+      description: 'Whiskas savory meals that is delicious.',
+      price: 39.99
+  }]
   return (
     <div className='Special-list-shop' style={{marginBottom: '64px'}}>
       <div className="heading-text">

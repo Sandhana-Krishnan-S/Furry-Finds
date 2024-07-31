@@ -79,10 +79,15 @@
     text-align: left;
     font-size: large;
     z-index: 1;
+    outline: none; 
 }
 
-.mail-field-footer input:active {
+.mail-field-footer input:focus {
     border: 2px solid white;
+}
+
+.mail-field-footer input::placeholder {
+    border: none;
 }
 
 .mail-field-footer img {

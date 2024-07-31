@@ -9,7 +9,7 @@ export const items = [
     {
         img: Item1,
         title: 'Ginger',
-        description: 'Ginger is a premium-quality Orange Cat with high energy.',
+        description: 'Ginger is a premium-quality Orange Cat.',
         price: 29.99
     },
     {
@@ -21,7 +21,7 @@ export const items = [
     {
         img: Item3,
         title: 'Buddy',
-        description: 'Buddy is a versatile and dog that is perfect',
+        description: 'Buddy is a versatile and dog.',
         price: 19.99
     },
     {
@@ -37,9 +37,21 @@ export const items = [
         price: 59.99
     },
     {
+        img: Item1,
+        title: 'Ginger',
+        description: 'Ginger is a premium-quality Orange Cat.',
+        price: 29.99
+    },
+    {
+        img: Item2,
+        title: 'Buddy’s Bowl',
+        description: 'Buddy’s Bowl is designed with style in mind. ',
+        price: 49.99
+    },
+    {
         img: Item6,
         title: 'Hemp Chewstix',
-        description: 'Hemp Chewstix is natural chew toys promote dental health.',
+        description: 'Hemp Chewstix is natural chew toys.',
         price: 89.99
     }
 ];

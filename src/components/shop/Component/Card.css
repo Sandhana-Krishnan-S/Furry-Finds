@@ -1,43 +1,102 @@
 .Item-card {
+    /* padding: 0 20px; */
+    background-color: #FFFFFF;
+    width: 300px;
+    height: auto;
+    border: 1px solid #F7F5F7;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item-image-holder {
+    background-color: #F7F5F7;
     display: flex;
-    flex-direction: column;
-    width: 360px;
-    height: 360px;
+    position: relative;
     justify-content: center;
     align-items: center;
-    padding: 16px 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border: 0.5px solid lightgoldenrodyellow;
-    cursor: pointer;
-    /* text-align: center; */
+    height: 270px;
+    width: 300px;
 }
 
-.Item-card:hover {
-    background-color: #FfefFf;
+.item-image-holder .item-card-img {
+    width: 240px;
+    height: auto;
 }
 
-.Item-card img {
-    border-radius: 12px;
+.item-card-wishlist {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
-
-.Item-card-content {
+.item-card-content {
+    padding: 12px 20px;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-    justify-content: space-around;
-    padding: 16px 32px;
-    width: 100%;
+    justify-content: center;
+    gap: 6px;
 }
 
-.Item-card-content-text {
-    margin: 0px 24px;
-    overflow: hidden;
+.item-card-left {
     width: 60%;
 }
 
-.Item-card-price {
+.ratings-item {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.ratings-item p {
+    font-size: 12px;
+    margin-top: 1px;
+}
+
+.item-card-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add-Cart-btn ,
+.view-more-btn {
+    width: 98px;
+    height: 36px;
+    border: none;
+    border-radius: 12px;
     text-align: center;
+    color: #FFFFFF;
+    font-weight: 500;
+    background-color: #F19ED2;
+    padding: 6px 4px;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.view-more-btn {
+    background-color: #FFFFFF;
+    border: 1.5px solid #444B59;
+    color: #444B59;
+}
+
+.add-Cart-btn:active {
+    background-color: darkmagenta;
+}
+
+.view-more-btn:active {
+    background-color: #444B59;
+    color: #FFFFFF;
+}
+
+.description {
+    padding: 2px 0px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.Item-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
 }
