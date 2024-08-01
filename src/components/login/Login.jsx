@@ -3,6 +3,7 @@ import cover from '../../assets/images/Login-Cover.png';
 import '../../styles/Login/style.css';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { loginController } from './axios/LoginAxios';
 
 export default function Login() {
   const Navigate = useNavigate()
@@ -10,12 +11,23 @@ export default function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [flag, setFlag] = useState(false)
+  const [err , setErr] = useState('')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({email , password})
-    login();
-    Navigate('/')
+    try {
+      // console.log({email , password})
+      const response = await loginController(email, password);
+      if (response.status) {
+        login()
+        Navigate('/')
+      }
+      else {
+        setErr(response.message)
+      }
+    } catch (error) {
+      setErr('An unexpected error occurred. Please try again.');
+    }
   }
 
    const checkboxHandler = () => {
