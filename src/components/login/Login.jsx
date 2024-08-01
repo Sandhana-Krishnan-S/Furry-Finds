@@ -26,7 +26,7 @@ export default function Login() {
         setErr(response.message)
       }
     } catch (error) {
-      setErr('An unexpected error occurred. Please try again.');
+      setErr('An unexpected error occurred. Please try again.')
     }
   }
 
@@ -41,6 +41,7 @@ export default function Login() {
           <h2>Hey, </h2>
           <h2>Welcome Back To Furry Finds</h2>
           <p id="heading">We are very happy to see you back!</p>
+          <p style={{color : '#FF6961'}}>{err}</p>
           <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <input

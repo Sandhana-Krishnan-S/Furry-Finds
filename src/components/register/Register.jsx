@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { NavLink } from 'react-router-dom'
 import signUpCover from '../../assets/images/Signup-Cover.png'
 import { useAuth } from '../../contexts/AuthContext'
+import { RegisterController } from './axios/RegisterController'
 
 export default function Register() {
   const Navigate = useNavigate()
@@ -10,23 +11,23 @@ export default function Register() {
   const [Email, setEmail] = useState('')
   const [Password, setPassword] = useState('')
   const [flag, setFlag] = useState(false)
-
-  function validate() {
-    return true;
-  }
+  const [err , setErr] = useState('')
 
   const {login} = useAuth()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(Email)
-    if (validate()) {
-      //connect db and store the value 
-      login()
-      Navigate('/')
-    }
-    else {
-      //handle err
+    try {
+      const response = await RegisterController(Username , Email , Password);
+      if (response.status) {
+        login()
+        Navigate('/')
+      }
+      else {
+        setErr(response.message)
+      }
+    } catch (error) {
+      setErr('An unexpected error occurred. Please try again.')
     }
   }
   const checkboxHandler = () => {
@@ -39,6 +40,7 @@ export default function Register() {
           <h2>Welcome!</h2>
           <h2>Furry Finds, Care of Pets!</h2>
           <p id="heading">Indulge in delightful, create an account for Furry Finds!</p>
+          <p style={{color : '#FF6961'}}>{err}</p>
           <form onSubmit={handleSubmit} >
             <label>Username : </label>
             <input type="text" value={Username} required onChange={(event) => setUsername(event.target.value)} placeholder="Enter your Username" className="inputbox" />
@@ -50,7 +52,7 @@ export default function Register() {
               <input type="checkbox" onClick={checkboxHandler} />
               <p className="terms">By signing up you are agree to our Term of Use and Privacy Policy.</p>
             </div>
-            <input type="submit" disabled={!flag} className="submit-btn" />
+            <input type="submit" disabled={!flag} className="submit-btn" value='Signup'/>
           </form>
           <button id="buttonOnLogin">
             <NavLink to='/login'>

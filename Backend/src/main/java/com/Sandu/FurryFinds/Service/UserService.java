@@ -22,9 +22,16 @@ public class UserService {
 
         try {
             String emailRegex = "^[a-zA-Z0-9_+&-]+(?:\\.[a-zA-Z0-9_+&-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
-            String passwordRegex = "^(?=.[a-z])(?=.[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
-            if(user.getEmail().matches(emailRegex) && user.getPassword().matches(passwordRegex) && user.getName().length() < 3) {
-                return new ResponseEntity<>("Invalid email or name" ,HttpStatus.NOT_ACCEPTABLE);
+            if (!user.getEmail().matches(emailRegex)) {
+                return new ResponseEntity<>("Invalid email format", HttpStatus.NOT_ACCEPTABLE);
+            }
+
+            if (user.getPassword().length() < 8) {
+                return new ResponseEntity<>("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one digit", HttpStatus.NOT_ACCEPTABLE);
+            }
+
+            if (user.getName().length() < 3) {
+                return new ResponseEntity<>("Name must be at least 3 characters long", HttpStatus.NOT_ACCEPTABLE);
             }
             PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
             String hashedPassword  = passwordEncoder.encode(user.getPassword());
@@ -32,6 +39,7 @@ public class UserService {
             repository.save(user);
             return new ResponseEntity<>(user ,HttpStatus.CREATED);
         } catch (Exception err) {
+            System.err.println(err.getMessage());
             return new ResponseEntity<>("Something went wrong", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

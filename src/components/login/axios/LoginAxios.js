@@ -20,6 +20,13 @@ export const loginController = async (userEmail , userPassword) => {
             message : 'Email or Password is Invalid'
         }
     } catch (error) {
+        // console.log(error)
+        if(error.response.status === 401) {
+            return {
+                status : false ,
+                message : 'Email or Password is Invalid'
+            }
+        }
         return {
             status : false ,
             message : 'Something went wrong'

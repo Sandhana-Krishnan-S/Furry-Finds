@@ -3,7 +3,11 @@
 
     review done nothing happend 
 
-    Nav bar was done today and i dont feel like to code today and design 
+    Foo bar was done today and i dont feel like to code today and design 
+
+    new Nav done for login user
+
+    backend user login and register done yahhh
 
 **DO SOME FUNCTIONALITY LIKE SEARCH CATEGORY AND LOGIN CART ETC.. STUPID...**
 
