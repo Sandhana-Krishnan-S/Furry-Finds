@@ -9,7 +9,7 @@ export default function Card({ img, title, description, price }) {
       <div className="item-image-holder">
         <img src={img} alt="" className='item-card-img' />
         <div className="item-card-wishlist" onClick={() => {}}>
-          <img src={wishlist} alt=""  />
+          <img src={wishlist} alt="" />
         </div>
       </div>
       <div className="item-card-content">

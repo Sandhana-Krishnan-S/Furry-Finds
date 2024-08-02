@@ -9,8 +9,8 @@ export const RegisterController = async (userName, userEmail, userPassword) => {
             password: userPassword
         });
 
-        if (response.status === 201) {
-            localStorage.setItem('userData', JSON.stringify(response.data));
+        if (response.status === 201) { 
+            localStorage.setItem('userData', JSON.stringify(response.data))
             return {
                 status: true,
                 message: 'Registration successful'
