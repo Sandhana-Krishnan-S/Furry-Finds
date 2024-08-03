@@ -2,7 +2,7 @@ import React from 'react'
 import Item4 from '../../assets/images/Item3.png';
 import Item6 from '../../assets/images/Item5.png';
 import Item2 from '../../assets/images/img_product.png'
-import Card from './Component/Card'
+import Card from './Component/Card/Card'
 
 export default function FoodAndAccessoryRec() {
     const items = [{

@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../global/NavBar'
-import Footer from '../global/Footer'
+import NavBar from '../../../global/NavBar'
+import Footer from '../../../global/Footer'
 
 export default function SingleProduct() {
   return (

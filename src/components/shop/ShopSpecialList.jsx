@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import { items } from './helper/SpecialList'
-import Card from './Component/Card'
+import Card from './Component/Card/Card'
 import '../../styles/Shop/ShopSpecialList.css'
 
 const ShopSpecialList = forwardRef((props, ref) => {

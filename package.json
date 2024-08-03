@@ -13,7 +13,9 @@
     "react-router": "^6.25.1",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
+    "react-shimmer-effects": "^1.0.3",
     "react-simple-star-rating": "^5.1.7",
+    "recharts": "^2.13.0-alpha.4",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {

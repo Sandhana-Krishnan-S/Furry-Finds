@@ -1,18 +1,18 @@
 import React from 'react'
 import NavBar from '../../../global/NavBar'
 import Footer from '../../../global/Footer'
-import PetStoreBanner from './Component/PetStoreBanner'
 import StoreSubHeading from '../global/StoreSubHeading'
 import Listing from '../global/StoreListing/Listing'
+import FoodStoreBanner from './component/FoodStoreBanner'
 
-export default function Pets() {
+export default function FoodStore() {
   return (
     <>
     <NavBar />
-    <div className="pet-shop">
-      <PetStoreBanner />
-      <StoreSubHeading heading = 'Pets' />
-      <Listing category= 'Pets' />
+    <div>
+      <FoodStoreBanner />
+      <StoreSubHeading heading = 'Food' />
+      <Listing category= 'Food' />
     </div>
     <Footer />
     </>

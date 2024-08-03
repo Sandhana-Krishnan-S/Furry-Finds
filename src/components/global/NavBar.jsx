@@ -5,8 +5,10 @@ import { useAuth } from '../../contexts/AuthContext'
 import CartIcon from '../../assets/images/cart-bag.png'
 import UserIcon from '../../assets/images/user.png'
 import WishListIcon from '../../assets/images/heart.png'
+import { useCart } from '../../contexts/CartContext'
 
 export default function NavBar() {
+    const {cartItems} = useCart()
     const {isAuthenticated} = useAuth()
     return (
         <div className='navBar'>
@@ -29,7 +31,7 @@ export default function NavBar() {
                             <div className="nav-islogin-element">
                                 <div className='nav-icon-cart'>
                                     <div className="nav-icon-login-cointainer">
-                                        <div className="cart-count"><p>2</p></div>
+                                        <div className="cart-count"><p>{cartItems.length}</p></div>
                                         <div className="add-cart-count">
                                             <img src={CartIcon} alt="" />
                                         </div>

@@ -1,0 +1,14 @@
+.listing {
+    margin: 24px 78px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    justify-content: space-around;
+  }
+  
+  .card-listing {
+    flex: 1 1 calc(20% - 16px); 
+    max-width: calc(20% - 16px);
+    min-width: 120px;
+  }
+  

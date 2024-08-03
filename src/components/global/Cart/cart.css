@@ -1,0 +1,27 @@
+.cart-title-content {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    margin: 24px 64px;
+}
+
+.line {
+    height: 0.5px;
+    background-color: #444B59;
+    width: 75%;
+}
+
+.empty-cart {
+    display: flex;
+    width: 100dvw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.empty-cart img {
+    width: 30%;
+    height: auto;
+}

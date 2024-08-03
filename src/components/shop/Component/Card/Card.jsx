@@ -1,5 +1,5 @@
 import React from 'react';
-import wishlist from '../../../assets/images/wishlistbtn.png'
+import wishlist from '../../../../assets/images/wishlistbtn.png'
 import './Card.css';
 import { Rating } from 'react-simple-star-rating';
 

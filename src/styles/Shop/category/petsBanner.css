@@ -1,0 +1,55 @@
+.petstore-banner {
+    display: flex;
+    padding: 32px 0px;
+    width: 100dvw;
+    justify-content: center;
+    align-items: center;
+}
+
+.petstore-banner-backgroung {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #E5E5E5;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
+}
+
+.petstore-banner-content {
+    display: flex;
+    flex-direction: column;
+    padding: 64px;
+    width: 35%;
+    gap: 24px;
+}
+
+.petstore-banner-content h2 {
+    color: #f43299;
+}
+
+.petstore-banner-content button {
+    width: 30%;
+    color: #FFFFFF;
+    background-color: #F19ED2;
+    border-color: transparent;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.petstore-banner-content button:hover {
+    background-color: rgba(241, 158, 210, 0.5);
+}
+.petstore-banner-content button:active {
+    background-color: #f43299;
+}
+
+.petstore-banner-img {
+    position: relative;
+    width: 30%;
+    height: auto;
+    z-index: 1;
+}
+
