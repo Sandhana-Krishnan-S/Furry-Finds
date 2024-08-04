@@ -5,7 +5,7 @@ import './style/CartCard.css'
 import { useCart } from '../../../../contexts/CartContext'
 
 export default function CartCard({ item }) {
-    const { cartItems , removeItem , increase , decrease} = useCart()
+    const { removeItem , increase , decrease} = useCart()
 
     return (
         <div className='cart-card'>
