@@ -9,10 +9,11 @@ const ShopSpecialList = forwardRef((props, ref) => {
       <div className="heading-text">
         <h2>Special Just for you</h2>
       </div>
-      <div className="listing">
+      <div className="special-listing">
         {items.map((item, index) => (
           <Card
-            key={index}
+            key={item.id}
+            id={item.id}
             img={item.img}
             title={item.title}
             description={item.description}

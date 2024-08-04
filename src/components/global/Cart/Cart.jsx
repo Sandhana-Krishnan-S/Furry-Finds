@@ -4,9 +4,18 @@ import NavBar from '../NavBar'
 import Footer from '../Footer'
 import emptyCart from '../../../assets/images/empty-cart.png'
 import './cart.css'
+import CartCard from './component/CartCard'
+import ShopSupportDetails from '../../shop/ShopSupportDetails'
+import CheckCartBalance from './component/CheckCartBalance'
 
 export default function Cart() {
     const { cartItems } = useCart()
+
+    const totalCartCount = cartItems.reduce(
+        (total, item) => (total = total + item.count),
+        0
+    )
+
     return (
         <>
             <NavBar />
@@ -14,7 +23,7 @@ export default function Cart() {
                 <h1>Continue Shopping </h1>
                 <div className="line"></div>
                 <h3>Shopping cart</h3>
-                <p>You have {cartItems.length} item in your cart</p>
+                <p>You have {totalCartCount} item in your cart</p>
             </div>
             <div>
                 {cartItems.length === 0 ? (
@@ -23,16 +32,19 @@ export default function Cart() {
                         <p>No Item Found</p>
                     </div>
                 ) : (
-                    <ul>
-                        {cartItems.map(item => (
-                            <li key={item.id}>
-                                {item.name}
-                                {/* Add more item details here if needed */}
-                            </li>
-                        ))}
-                    </ul>
+                    <div>
+                        <ul>
+                            {cartItems.map(item => (
+                                <li key={item.id}>
+                                    <CartCard item={item} />
+                                </li>
+                            ))}
+                        </ul>
+                        <CheckCartBalance />
+                    </div>
                 )}
             </div>
+            <ShopSupportDetails />
             <Footer />
         </>
     )

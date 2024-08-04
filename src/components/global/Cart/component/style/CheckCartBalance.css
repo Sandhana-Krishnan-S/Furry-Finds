@@ -1,0 +1,60 @@
+.CheckCartBalance,
+.CheckCartBalance-list {
+    display: flex;
+    width: 100dvw;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.Cart-line-detail {
+    margin: 10px 0px;
+    background-color: #444B59;
+    height: 1px;
+    width: 40%;
+}
+
+.CheckCartBalance-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+}
+
+.CheckCartBalance-content-list {
+    width: 35dvw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.CheckCartBalance-checkout-btn {
+    background-color: #F19ED2;
+    border-color: transparent;
+    border-radius: 12px;
+}
+
+.CheckCartBalance-checkout-btn:hover {
+    background-color: rgba(241, 158, 210, 0.5);
+}
+
+.CheckCartBalance-checkout-btn:active {
+    background-color: #f43299;
+}
+
+.CheckCartBalance-checkout-btn div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 50px;
+}
+
+.CheckCartBalance-checkout-btn div p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+}

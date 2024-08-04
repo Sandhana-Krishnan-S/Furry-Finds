@@ -4,7 +4,6 @@ import ShopView from './ShopView'
 import ShopCategory from './ShopCategory'
 import ShopSpecialList from './ShopSpecialList'
 import ShopSupportDetails from './ShopSupportDetails'
-import FoodAndAccessoryRec from './FoodAndAccessoryRec'
 import Footer from '../global/Footer'
 
 export default function Shop() {
@@ -23,7 +22,6 @@ export default function Shop() {
       <ShopCategory />
       <ShopSpecialList ref={specialListRef} />
       <ShopSupportDetails />
-      <FoodAndAccessoryRec />
     </div>
     <Footer />
     </>

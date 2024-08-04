@@ -2,8 +2,10 @@ import React from 'react';
 import wishlist from '../../../../assets/images/wishlistbtn.png'
 import './Card.css';
 import { Rating } from 'react-simple-star-rating';
+import { useCart } from '../../../../contexts/CartContext';
 
-export default function Card({ img, title, description, price }) {
+export default function Card({ id, img, title, description, price }) {
+  const { addItem } = useCart()
   return (
     <div className="Item-card">
       <div className="item-image-holder">
@@ -28,7 +30,7 @@ export default function Card({ img, title, description, price }) {
         </div>
       </div>
         <div className="item-card-buttons">
-          <button className='add-Cart-btn'>Add to cart</button>
+          <button className='add-Cart-btn' onClick={() => {addItem({ id, img, title, description, price })}}>Add to cart</button>
           <button className='view-more-btn'>View more</button>
         </div>
     </div>

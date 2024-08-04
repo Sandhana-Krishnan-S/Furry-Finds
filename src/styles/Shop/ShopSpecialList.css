@@ -2,16 +2,17 @@
     margin: 32px 0px;
 }
 
-.listing {
-    margin-top: 32px;
-    display: flex; 
-    flex-wrap: wrap; 
+.special-listing {
+    margin: 24px 0px;
+    display: flex;
+    flex-wrap: wrap;
     gap: 48px;
     justify-content: space-around;
-    /* margin-bottom: 1px; */
-}
-
-.listing Card {
-    flex: 1 1 calc(33.333% - 16px); 
-    max-width: calc(33.333% - 16px);
-}
+  }
+  
+  .special-listing Card {
+    flex: 1 1 calc(20% - 16px); 
+    max-width: calc(20% - 16px);
+    min-width: 120px;
+  }
+  

@@ -10,6 +10,11 @@ import { useCart } from '../../contexts/CartContext'
 export default function NavBar() {
     const {cartItems} = useCart()
     const {isAuthenticated} = useAuth()
+
+    const totalCartCount = cartItems.reduce(
+        (total, item) => (total = total + item.count),
+        0
+      )
     return (
         <div className='navBar'>
             <div className="logo">
@@ -27,11 +32,11 @@ export default function NavBar() {
             <div className="nav-islogin-div">
                 <ul>
                     <li>
-                        <Link>
+                        <Link to={'/cart'}>
                             <div className="nav-islogin-element">
                                 <div className='nav-icon-cart'>
                                     <div className="nav-icon-login-cointainer">
-                                        <div className="cart-count"><p>{cartItems.length}</p></div>
+                                        <div className="cart-count"><p>{totalCartCount}</p></div>
                                         <div className="add-cart-count">
                                             <img src={CartIcon} alt="" />
                                         </div>

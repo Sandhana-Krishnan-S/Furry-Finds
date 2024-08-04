@@ -1,0 +1,70 @@
+.cart-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100dvw;
+    align-items: center;
+}
+
+.cart-card-content {
+    display: flex;
+    padding: 10px 20px;
+    margin: 12px 126px 12px 0px;
+    width: 70%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 64px;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cart-card-content:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img-holder-cart-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F5F7;
+    width: 300px;
+    height: 300px;
+    padding: 10px 20px;
+}
+
+.cart-card-btns {
+    display: flex;
+    gap: 24px;
+}
+
+.adder-remover-container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 5px 20px;
+    background-color: #F7F5F7;
+    border-radius: 16px;
+}
+
+.adder-remover-container button {
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 0px 10px;
+    color: #F19ED2;
+}
+
+.delete-all-from-car img {
+    width: 40px;
+    height: auto;
+}
+
+.adder-remover-container button:active {
+    background-color: #ebeaeb;
+}
+
+.item-content-main {
+    width: 33%;
+}
