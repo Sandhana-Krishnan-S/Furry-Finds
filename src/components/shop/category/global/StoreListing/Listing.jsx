@@ -13,15 +13,8 @@ export default function Listing({ category }) {
     useEffect(() => {
         const fetchData = async () => {
             setIsLoading(true);
-            //   try {
-            //     const response = await fetchData({category , currentPage , itemPerPage})
-            //     const result = await response.json()
-            //     setData(result.items)
-            //     setTotalPages(result.totalPages)
-            //   } catch (error) {
-            //     console.error('Error fetching data:', error)
-            //   }
-              setIsLoading(true)
+            //fetch and set the isloadinf to false
+            // setIsLoading(false)  
         }
 
         fetchData();

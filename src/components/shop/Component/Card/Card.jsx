@@ -3,9 +3,11 @@ import wishlist from '../../../../assets/images/wishlistbtn.png'
 import './Card.css';
 import { Rating } from 'react-simple-star-rating';
 import { useCart } from '../../../../contexts/CartContext';
+import { useWhishList } from '../../../../contexts/WhishListContext';
 
 export default function Card({ id, img, title, description, price }) {
   const { addItem } = useCart()
+  const { addWhishList, removeWhishList } = useWhishList()
   return (
     <div className="Item-card">
       <div className="item-image-holder">

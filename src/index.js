@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { AuthProvider } from './contexts/AuthContext';
 import '@fontsource/fira-code';
 import { CartProvider } from './contexts/CartContext';
+import { WishListProvider } from './contexts/WhishListContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <AuthProvider>
       <CartProvider>
-        <App />
+        <WishListProvider>
+          <App />
+        </WishListProvider>
       </CartProvider>
     </AuthProvider>
   </React.StrictMode>
