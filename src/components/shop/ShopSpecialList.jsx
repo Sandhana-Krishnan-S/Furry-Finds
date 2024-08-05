@@ -12,12 +12,8 @@ const ShopSpecialList = forwardRef((props, ref) => {
       <div className="special-listing">
         {items.map((item, index) => (
           <Card
-            key={item.id}
-            id={item.id}
-            img={item.img}
-            title={item.title}
-            description={item.description}
-            price={item.price}
+            key={index}
+            item={item}
           />
         ))}
       </div>

@@ -1,0 +1,22 @@
+.wishList-content {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 95dvw;
+}
+
+.heading-wishlist {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    text-align: center;
+    margin: 10px 64px;
+}
+
+.heading-wishlist .blob {
+    background-color: #FF6E9F;
+    width: 12px;
+    /* height: 120px; */
+}

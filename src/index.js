@@ -7,6 +7,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import '@fontsource/fira-code';
 import { CartProvider } from './contexts/CartContext';
 import { WishListProvider } from './contexts/WhishListContext';
+import { Flip, ToastContainer } from 'react-toastify';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,19 @@ root.render(
       <CartProvider>
         <WishListProvider>
           <App />
+          <ToastContainer 
+          position="bottom-center"
+          autoClose={5000}
+          hideProgressBar
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Flip}
+          />
         </WishListProvider>
       </CartProvider>
     </AuthProvider>

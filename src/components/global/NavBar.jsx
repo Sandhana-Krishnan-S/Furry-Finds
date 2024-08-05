@@ -46,7 +46,7 @@ export default function NavBar() {
                         </Link>
                     </li>
                     <li>
-                        <Link>
+                        <Link to='/wishlist'>
                             <div className="nav-islogin-element">
                                 <div className='nav-icon-wishlist'>
                                     <div className="nav-icon-login-cointainer">

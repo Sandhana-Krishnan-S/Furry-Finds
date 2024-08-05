@@ -11,6 +11,8 @@ import Gadget from '../components/shop/category/Gadget/Gadget'
 import FoodStore from '../components/shop/category/Food/FoodStore'
 import Aquatic from '../components/shop/category/Aquatic/Aquatic'
 import Cart from '../components/global/Cart/Cart'
+import WishList from '../components/global/wishList/WishList'
+import SingleProduct from '../components/shop/Component/products/SingleProduct'
 
 export default function Router() {
   return (
@@ -26,7 +28,9 @@ export default function Router() {
             <Route path='/shop/food' element = {<FoodStore />} />
             <Route path='/shop/aquatic' element = {<Aquatic />} />
             <Route path='/cart' element = {<Cart />} />
+            <Route path='/wishlist' element = {<WishList />} />
             <Route path='/about' element = {<AboutUs />} />
+            <Route path='/test/product' element = {<SingleProduct />} />
         </Routes>
     </BrowserRouter>
   )
