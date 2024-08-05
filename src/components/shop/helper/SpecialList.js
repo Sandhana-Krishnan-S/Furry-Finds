@@ -49,14 +49,14 @@ export const items = [
         price: 29.99
     },
     {
-        id: 2,
+        id: 7,
         img: Item2,
         title: 'Buddy’s Bowl',
         description: 'Buddy’s Bowl is designed with style in mind. ',
         price: 49.99
     },
     {
-        id: 6,
+        id: 8,
         img: Item6,
         title: 'Hemp Chewstix',
         description: 'Hemp Chewstix is natural chew toys.',
