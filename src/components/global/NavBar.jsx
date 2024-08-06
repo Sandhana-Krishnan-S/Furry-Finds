@@ -25,7 +25,7 @@ export default function NavBar() {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/shop">Shop</Link></li>
                     <li><Link to="/about">About Us</Link></li>
-                    {!isAuthenticated ? <li><Link to="/signup">Sign Up</Link></li> : undefined}
+                    {!isAuthenticated ? <li><Link to="/login ">Login</Link></li> : undefined}
                 </ul>
             </div>
             {isAuthenticated ? 

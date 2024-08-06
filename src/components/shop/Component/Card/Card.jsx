@@ -52,7 +52,7 @@ export default function Card({item}) {
       <div className="item-card-content">
         <div className="item-card-left">
           <h4 className='title'>{item.title}</h4>
-          <p className='description'>{item.description}</p>
+          <p className='description'>{item.prodDescription}</p>
           <div className="ratings-item">
             <div className="rating-stars">
               <Rating readonly = {true}  initialValue={3.5} size={20}/>

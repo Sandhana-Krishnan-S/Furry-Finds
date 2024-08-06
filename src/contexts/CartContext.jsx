@@ -10,16 +10,16 @@ export const useCart = () => {
 export const CartProvider = ({ children }) => {
     const [cartItems, setCartItems] = useState([])
     
-      const addItem = (item) => {
+      const addItem = (item , count) => {
         setCartItems((prevCartItems) => {
             const itemExists = prevCartItems.find((cartItem) => cartItem.id === item.id)
             return itemExists
               ? prevCartItems.map((cartItem) =>
                   cartItem.id === item.id
-                    ? { ...cartItem, count: cartItem.count + 1 }
+                    ? { ...cartItem, count: cartItem.count + count || 1 }
                     : cartItem
                 )
-              : [...prevCartItems, { ...item, count: 1 }]
+              : [...prevCartItems, { ...item, count: count || 1 }]
           })
       }
     

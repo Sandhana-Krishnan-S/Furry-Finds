@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
+import deleveryTruck from '../../../../../assets/images/deleveryTruck.png'
+import cartBag from '../../../../../assets/images/CartBag.png'
+import Heart from '../../../../../assets/images/wishHeart-v1.png'
+import HeartActive from '../../../../../assets/images/wishHeart-v1Active.png'
+import shareIcon from '../../../../../assets/images/share.png'
+import starIcon from '../../../../../assets/images/starIcon.png'
+import messageIcon from '../../../../../assets/images/messageIcon.png'
+
+//temp
 import img from '../../../../../assets/images/Item2.png'
+import { useWhishList } from '../../../../../contexts/WhishListContext'
+import { useCart } from '../../../../../contexts/CartContext'
 
 
 export default function MainBody() {
     const data = {
+        id: 1,
         img: img,
         title: "title of prod",
         store: "name of store",
@@ -52,6 +64,13 @@ export default function MainBody() {
         }]
     }
 
+    //end temp
+
+    const { wishListId, wishHandler} = useWhishList()
+    const { addItem } = useCart()
+
+    const [count , setCount] = useState(1)
+    const isWished = wishListId.has(data.id)
     return (
         <div className='product-main-body'>
             <div className="product-main-img">
@@ -60,15 +79,15 @@ export default function MainBody() {
             <div className="product-main-content">
                 <div className="product-main-head-content">
                     <div className="product-main-head-texts">
-                        <h3></h3>
-                        <p></p>
+                        <h3>{data.title}</h3>
+                        <p>{data.store}</p>
                     </div>
                     <div className="product-main-head-btn">
-                        <div className="product-main-head-btn-wishlist">
-                            <img src="" alt="" />
+                        <div className="product-main-head-btn-wishlist" onClick={() => wishHandler(isWished , data)}>
+                            <img src={isWished ? HeartActive : Heart} alt="" />
                         </div>
                         <div className="product-main-head-btn-share">
-                            <img src="" alt="" />
+                            <img src={shareIcon} alt="" />
                         </div>
                     </div>
 
@@ -76,23 +95,42 @@ export default function MainBody() {
                 <div className="product-main-body">
                     <div className="product-main-body-priceandrating">
                         <div className="product-main-body-price">
-                            <h2></h2>
+                            <h2>${data.price}</h2>
                         </div>
                         <div className="product-main-body-rating">
-                            <div className="rating-and-review"></div>
+                            <div className="rating-and-review">
+                                <div className="rating">
+                                    <img src={starIcon} alt="" />
+                                    <p>{data.prodRating}</p>
+                                </div>
+                                <div className="reviewCount">
+                                    <img src={messageIcon} alt="" />
+                                    <p>{data.totalReview} Review</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="product-main-body-description">
-                        <p></p>
+                        <p>{data.prodDescription}</p>
                     </div>
                 </div>
                 <div className="count-and-addto-cart">
-                    <div className="cart-item-counter"></div>
-                    <button>Add to Cart</button>
+                    <div className="adder-remover-container">
+                        <button onClick={() => setCount(count - 1  === 0 ? 1 : count - 1)}> - </button>
+                        <p>{count}</p>
+                        <button onClick={() => setCount(count + 1)}> + </button>
+                    </div>
+                    <button onClick={() => addItem(data , count)}>Add to Cart</button>
                 </div>
                 <div className="product-main-feature-card">
-                    <div className="free-delivery"></div>
-                    <div className="return-policy"></div>
+                    <div className="product-main-feature-card-element">
+                        <img src={deleveryTruck} alt="" />
+                        <h3>Free Delivery</h3>
+                    </div>
+                    <div className="product-main-feature-card-element">
+                        <img src={cartBag} alt="" />
+                        <h3>Return Delivery</h3>
+                    </div>
                 </div>
             </div>
         </div>
