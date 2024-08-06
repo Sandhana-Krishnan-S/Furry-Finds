@@ -1,0 +1,47 @@
+.SubBody-main {
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    padding: 36px;
+    gap: 24px
+}
+
+.SubBody-switch {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 36px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.SubBody-briefDescription {
+    max-width: 80dvw;
+}
+
+.subBody-description {
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.SubBody-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.DescriptionList {
+    display: flex;
+    gap: 24px;
+}
+
+#active {
+    color: #F19ED2;
+}
+
+#non-active {
+    color: #444B59;
+}
