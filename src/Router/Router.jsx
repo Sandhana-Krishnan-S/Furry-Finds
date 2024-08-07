@@ -13,6 +13,7 @@ import Aquatic from '../components/shop/category/Aquatic/Aquatic'
 import Cart from '../components/global/Cart/Cart'
 import WishList from '../components/global/wishList/WishList'
 import SingleProduct from '../components/shop/Component/products/SingleProduct'
+import FileUpload from '../Test/FileUpload'
 
 export default function Router() {
   return (
@@ -31,6 +32,7 @@ export default function Router() {
             <Route path='/wishlist' element = {<WishList />} />
             <Route path='/about' element = {<AboutUs />} />
             <Route path='/test/product' element = {<SingleProduct />} />
+            <Route path='/test/fileUpload' element = {<FileUpload />} />
         </Routes>
     </BrowserRouter>
   )

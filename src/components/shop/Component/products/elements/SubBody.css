@@ -38,6 +38,69 @@
     gap: 24px;
 }
 
+.toggler-product {
+    cursor: pointer;
+}
+
+.subBody-customer-feedback {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 64px;
+    height: 360px;
+    margin-top: 24px;
+}
+
+.overAll-feedback {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 64px;
+    background-color: #F9F9F9;
+    border-radius: 12px;
+    height: 100%;
+    width: 240px;
+}
+
+.overAll-feedback-chart {
+    display: flex;
+    flex-direction: column;
+    padding: 64px;
+    background-color: #F9F9F9;
+}
+
+.feedback-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.feedback-bar {
+    width: 240px;
+    height: 4px;
+    background-color: #E6EAEE;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fill {
+    background-color: #F19ED2;
+}
+
+.stars {
+    margin-top: 10px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #active {
     color: #F19ED2;
 }

@@ -36,11 +36,14 @@ const description = {
 
 const rating = {
     prodRating: 4.5,
-    Stars: [{ fiveStars: 8 },
-    { fourStar: 23 },
-    { threeStar: 4 },
-    { twoStar: 1 },
-    { oneStar: 0 }],
+    totalReview: 36,
+    Stars:[
+      { stars: 5, count: 8 },
+      { stars: 4, count: 23 },
+      { stars: 3, count: 4 },
+      { stars: 2, count: 1 },
+      { stars: 1, count: 0 },
+    ],
     review: [{
         user: "userName",
         reviewedAt: "3 days ago",
