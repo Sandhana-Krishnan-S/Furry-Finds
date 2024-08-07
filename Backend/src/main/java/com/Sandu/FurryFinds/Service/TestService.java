@@ -23,7 +23,6 @@ public class TestService {
             TestFile save = repo.save(testFile);
             return new ResponseEntity<>(save, HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();  // Print the stack trace for debugging
             return new ResponseEntity<>("Failed to upload file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

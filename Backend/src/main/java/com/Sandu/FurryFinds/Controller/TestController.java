@@ -1,6 +1,8 @@
 package com.Sandu.FurryFinds.Controller;
 
 import com.Sandu.FurryFinds.Service.TestService;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,29 +20,14 @@ public class TestController {
         try {
             return service.upload(uploadRequest.getImg(), uploadRequest.getName());
         } catch (Exception e) {
-            e.printStackTrace();  // Print the stack trace for debugging
             return ResponseEntity.status(500).body("Failed to upload file: " + e.getMessage());
         }
     }
 
+    @Setter
+    @Getter
     private static class UploadRequest {
         private String img;
         private String name;
-
-        public String getImg() {
-            return img;
-        }
-
-        public void setImg(String img) {
-            this.img = img;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
     }
 }

@@ -46,13 +46,13 @@ const rating = {
     ],
     review: [{
         user: "userName",
-        reviewedAt: "3 days ago",
+        reviewedAt: "2024-08-05T12:00:00",
         star: 5,
         reviewTitle: "good product",
         reviewDiscription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequatur accusantium doloremque dignissimos non id enim? Magni aperiam dolore delectus id! Aliquam, molestiae illo libero fuga quisquam ipsum velit tempore?"
     }, {
         user: "userName",
-        reviewedAt: "3 days ago",
+        reviewedAt: "2024-08-05T12:00:00",
         star: 5,
         reviewTitle: "good product",
         reviewDiscription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequatur accusantium doloremque dignissimos non id enim? Magni aperiam dolore delectus id! Aliquam, molestiae illo libero fuga quisquam ipsum velit tempore?"
