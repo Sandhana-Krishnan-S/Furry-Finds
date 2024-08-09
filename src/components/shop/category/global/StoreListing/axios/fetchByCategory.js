@@ -1,13 +1,28 @@
 import axios from "axios"
 
-export const fetchData = ({category , pageno , pageSize}) => {
+export const fetchDataByCategory = async (category , pageno , pageSize) => {
     try {
-        const response = axios.get(`http://localhost:8080/api/products/get-product/by-category/FOOD`)
-        if(response.status === 200) {
-            const parsedResponce = JSON.stringify(response.data)
-            return parsedResponce
+        const response = await axios.get(`http://localhost:8080/api/products/get-product/by-category/${category}/${pageno}/${pageSize}`)
+        console.log(response.data)
+        if (response.status === 200) {
+            const fetchedData = response.data;
+            return {
+                status : true,
+                data : fetchedData.content,
+                totalPages : fetchedData.totalPages
+            }
+        } else {
+            console.error(`Unexpected response status: ${response.status}`);
+            return {
+                status :  false,
+                data : 'Faild to fetch'
+            }
         }
     } catch (error) {
-        
+        console.error('Error fetching data:', error);
+        return {
+            status : false,
+            data : 'Something went wrong'
+        }
     }
 }

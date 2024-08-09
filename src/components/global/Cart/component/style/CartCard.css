@@ -33,6 +33,12 @@
     padding: 10px 20px;
 }
 
+.img-holder-cart-card img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; 
+}
+
 .cart-card-btns {
     display: flex;
     gap: 24px;

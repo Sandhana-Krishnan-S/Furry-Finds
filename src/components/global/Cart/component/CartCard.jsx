@@ -15,12 +15,12 @@ export default function CartCard({ item }) {
                 </div>
                 <div className="item-content-main">
                     <h3>{item.title}</h3>
-                    <p>{item.description}</p>
+                    <p>{item.prodDescription}</p>
                     <div className="ratings-item">
                         <div className="rating-stars">
                             <Rating readonly={true} initialValue={item.rating || 4.5} allowFraction size={20} />
                         </div>
-                        <div className="rating-count"><p>({123})</p></div>
+                        <div className="rating-count"><p>({item.totalReview})</p></div>
                     </div>
                     <h4>${item.price}</h4>
                 </div>

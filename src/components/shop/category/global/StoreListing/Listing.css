@@ -2,6 +2,7 @@
     margin: 24px 78px;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 48px;
     justify-content: space-around;
   }
@@ -11,4 +12,40 @@
     max-width: calc(20% - 16px);
     min-width: 120px;
   }
-  
+
+.num-of-page {
+  display: flex;
+  align-items: center;
+  width: 100dvh;
+}
+
+.test-class {
+  display: flex;
+  width: 100dvw;
+  flex-direction: column;
+}
+
+.main-listing-element {
+  display: flex;
+  flex-direction: column;
+}
+
+.num-of-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.listing-paginate-btn {
+  background-color: #FFFFFF;
+  padding: 10px 20px;
+  color: #667085;
+  border: 1px solid #F3F3F3;
+}
+
+#active-list {
+  background-color: #F3EFF6;
+  border-color: transparent;
+}

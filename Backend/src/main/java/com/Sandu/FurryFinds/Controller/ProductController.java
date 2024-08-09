@@ -22,11 +22,6 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
-//    @PostMapping("/add-product")
-//    public ResponseEntity<?> addProduct(@RequestBody ProductModel product) {
-//        return service.addProduct(product);
-//    }
-
     @PostMapping("/addAll-product")
     public ResponseEntity<?> addProductAll(@RequestBody List<ProductModel> product) {
         return service.addAllProduct(product);
@@ -37,8 +32,8 @@ public class ProductController {
         return service.getProduct(id);
     }
 
-    @GetMapping("/get-product/by-category/{category}")
-    public ResponseEntity<?> getProductByCategory(@PathVariable ProductModel.Category category ) {
-        return service.getProductByCategory(category);
+    @GetMapping("/get-product/by-category/{category}/{pageNo}/{pageSize}")
+    public ResponseEntity<?> getProductByCategory(@PathVariable ProductModel.Category category , @PathVariable int pageNo , @PathVariable int pageSize ) {
+        return service.getProductByCategory(category , pageNo , pageSize);
     }
 }

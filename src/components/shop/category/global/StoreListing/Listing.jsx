@@ -3,57 +3,78 @@ import { ShimmerPostItem } from 'react-shimmer-effects'
 import './Listing.css'
 import Card from '../../../Component/Card/Card'
 import { fetchDataByCategory } from './axios/fetchByCategory'
-import axios from 'axios'
 
 export default function Listing({ category }) {
-    const itemPerPage = 16
-    const [currentPage, setCurrentPage] = useState(1)
-    const [totalPages, setTotalPages] = useState(0)
-    const [isLoading, setIsLoading] = useState(false)
-    const [data, setData] = useState([])
+  const itemPerPage = 16
+  const [currentPage, setCurrentPage] = useState(0)
+  const [totalPages, setTotalPages] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState([])
 
-    useEffect(() => {
-      const fetchData = async () => {
-          setIsLoading(true);
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const responce = await fetchDataByCategory(category, currentPage, itemPerPage)
+      if (responce.status) {
+        setData([...responce.data])
+        setTotalPages(responce.totalPages)
+      }
+      else {
+        // TODO : failed to test
+      }
 
-          try {
-              const response = await axios.get(`http://localhost:8080/api/products/get-product/by-category/${category}`);
-              if (response.status === 200) {
-                  const fetchedData = response.data;
-                  console.log(fetchedData)
-                  setData(fetchedData);
-              } else {
-                  console.error(`Unexpected response status: ${response.status}`);
-              }
-          } catch (error) {
-              console.error('Error fetching data:', error);
-          } finally {
-              setIsLoading(false);
-          }
-      };
+    } catch (error) {
+      // TODO : something went wrong
+    } finally {
+      setTimeout(() => setIsLoading(false) , 1000)
+      
+    }
+  }
+  useEffect(() => {
+    fetchData()
+  }, [currentPage])
 
-      fetchData();
-  }, []);
-
-    return (
-        <div className="listing">
-        {isLoading ? (
-          <>
-            {Array.from({ length: 16 }, (_, index) => (
-              <div key={index} className="card-listing">
-                <ShimmerPostItem card={true} title="Loading..." text="Loading description..." cta="Loading CTA" />
-              </div>
+  return (
+    <div className="listing">
+      {isLoading ? (
+        <div className='special-listing'>
+          {Array.from({ length: 16 }, (_, index) => (
+            <div key={index} className="card-listing">
+              <ShimmerPostItem
+                card={true}
+                title="Loading..."
+                text="Loading description..."
+                cta="Loading CTA"
+              />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div className="main-listing-element">
+          <div className='special-listing'>
+          {data.map((item) => (
+            <div key={item.id} className="special-listing">
+              <Card item={item} />
+            </div>
+          ))}
+        </div>
+          <div className="num-of-page">
+            {/* Pagination buttons */}
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index}
+                className="listing-paginate-btn"
+                id={index === currentPage ? "active-list" : "non-active-list"}
+                onClick={(event) => {
+                  event.preventDefault()
+                  setCurrentPage(index)}}
+              >
+                {index + 1}
+              </button>
             ))}
-          </>
-        ) : (
-          <>
-            {data.map((item) => (
-              <div key={item.id} className="special-listing">
-                <Card item={item} />
-              </div>
-            ))}
-          </>
-        )}
-      </div>
-    )
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }

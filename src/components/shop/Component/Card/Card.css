@@ -18,8 +18,9 @@
 }
 
 .item-image-holder .item-card-img {
-    width: 240px;
-    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; 
 }
 
 .item-card-wishlist {
