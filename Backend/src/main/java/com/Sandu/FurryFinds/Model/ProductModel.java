@@ -16,10 +16,7 @@ public class ProductModel {
     private Long id;
 
     @Lob
-    private byte[] img;
-
-    @Transient
-    private String imgVal;
+    private String img;
 
     @Column(nullable = false, length = 255)
     private String title;

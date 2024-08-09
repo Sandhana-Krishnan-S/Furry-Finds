@@ -12,7 +12,7 @@ export default function Aquatic() {
     <div>
       <AquaticBanner />
       <StoreSubHeading heading = 'Aquatic' />
-      <Listing category= 'Aquatic' />
+      <Listing category= 'AQUATIC' />
     </div>
     <Footer />
     </>

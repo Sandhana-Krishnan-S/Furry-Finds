@@ -67,47 +67,32 @@ const FileUpload = () => {
     const [rating, setRating] = useState(0);
     const [prodDescription, setProdDescription] = useState("");
     const [price, setPrice] = useState(0);
-    const [file, setFile] = useState(null);
+    const [imgBase64, setImgBase64] = useState("");
 
-    const sendFile = () => {
-        const formData = new FormData();
-        formData.append('title', dataName);
-        formData.append('store', store);
-        formData.append('category', category);
-        formData.append('totalReview', totalReview);
-        formData.append('rating', rating);
-        formData.append('prodDescription', prodDescription);
-        formData.append('price', price);
-        formData.append('myImage', file);
-
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = async () => {
-            const base64String = reader.result.split(',')[1];
-            try {
-                const response = await axios.post('http://localhost:8080/api/products/add-product', {
-                    imgVal: base64String,
-                    title: dataName,
-                    store: store,
-                    category: category,
-                    totalReview: totalReview,
-                    rating: rating,
-                    prodDescription: prodDescription,
-                    price: price
-                }, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                console.log(response.data);
-            } catch (e) {
-                if (e.response && e.response.status === 409) {
-                    console.log("Conflict: The product already exists or there's a duplicate entry.", e.response.data);
-                } else {
-                    console.log("Failed to upload the product", e);
+    const sendFile = async () => {
+        try {
+            const response = await axios.post('http://localhost:8080/api/products/add-product', {
+                imgVal: imgBase64,
+                title: dataName,
+                store: store,
+                category: category,
+                totalReview: totalReview,
+                rating: rating,
+                prodDescription: prodDescription,
+                price: price
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
                 }
+            });
+            console.log(response.data);
+        } catch (e) {
+            if (e.response && e.response.status === 409) {
+                console.log("Conflict: The product already exists or there's a duplicate entry.", e.response.data);
+            } else {
+                console.log("Failed to upload the product", e);
             }
-        };
+        }
     };
 
     return (
@@ -119,11 +104,10 @@ const FileUpload = () => {
             <input type="number" step="0.1" placeholder="Rating" onChange={(e) => setRating(e.target.value)} />
             <textarea placeholder="Product Description" onChange={(e) => setProdDescription(e.target.value)}></textarea>
             <input type="number" placeholder="Price" onChange={(e) => setPrice(e.target.value)} />
-            <input
-                type="file"
-                name="myImage"
-                onChange={(e) => setFile(e.target.files[0])}
-            />
+            <textarea
+                placeholder="Base64 Image String"
+                onChange={(e) => setImgBase64(e.target.value)}
+            ></textarea>
             <input type="button" value="Send" onClick={sendFile} />
         </form>
     );

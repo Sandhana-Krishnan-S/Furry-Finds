@@ -3,16 +3,16 @@ import NavBar from '../../../global/NavBar'
 import Footer from '../../../global/Footer'
 import StoreSubHeading from '../global/StoreSubHeading'
 import Listing from '../global/StoreListing/Listing'
-import FoodStoreBanner from './component/FoodStoreBanner'
+import PetStoreBanner from '../Pets/Component/PetStoreBanner'
 
 export default function FoodStore() {
   return (
     <>
     <NavBar />
     <div>
-      <FoodStoreBanner />
+      <PetStoreBanner />
       <StoreSubHeading heading = 'Food' />
-      <Listing category= 'Food' />
+      <Listing category= 'FOOD' />
     </div>
     <Footer />
     </>

@@ -12,7 +12,7 @@ export default function Accessory() {
     <div className="pet-shop">
       <AccessoryBanner />
       <StoreSubHeading heading = 'Accessory' />
-      <Listing category= 'Accessory' />
+      <Listing category= 'ACCESSORY' />
     </div>
     <Footer />
     </>

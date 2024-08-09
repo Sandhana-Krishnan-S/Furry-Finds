@@ -22,13 +22,23 @@ public class ProductController {
     @Autowired
     private ProductService service;
 
-    @PostMapping("/add-product")
-    public ResponseEntity<?> addProduct(@RequestBody ProductModel product) {
-        return service.addProduct(product);
+//    @PostMapping("/add-product")
+//    public ResponseEntity<?> addProduct(@RequestBody ProductModel product) {
+//        return service.addProduct(product);
+//    }
+
+    @PostMapping("/addAll-product")
+    public ResponseEntity<?> addProductAll(@RequestBody List<ProductModel> product) {
+        return service.addAllProduct(product);
     }
 
     @GetMapping("/get-product/{id}")
     public ResponseEntity<?> getProduct(@PathVariable Long id ) {
         return service.getProduct(id);
+    }
+
+    @GetMapping("/get-product/by-category/{category}")
+    public ResponseEntity<?> getProductByCategory(@PathVariable ProductModel.Category category ) {
+        return service.getProductByCategory(category);
     }
 }

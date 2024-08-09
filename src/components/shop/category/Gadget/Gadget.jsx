@@ -12,7 +12,7 @@ export default function Gadget() {
     <div>
       <GadgetBanner />
       <StoreSubHeading heading = 'Gadget' />
-      <Listing category= 'Gadget' />
+      <Listing category= 'GADGET' />
     </div>
     <Footer />
     </>
