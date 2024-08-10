@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @Table(name = "products")
 @Getter
@@ -26,7 +24,7 @@ public class ProductModel {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Category category;
+    private Category category = Category.UNDEFINED;
 
     @Column(nullable = false)
     private float price;
@@ -51,6 +49,6 @@ public class ProductModel {
 //    private Set<ReviewTable> review;
 
     public enum Category {
-        PET, ACCESSORY, GADGET, FOOD, AQUATIC
+        PET, ACCESSORY, GADGET, FOOD, AQUATIC, UNDEFINED
     }
 }
