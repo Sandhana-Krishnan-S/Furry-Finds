@@ -24,4 +24,4 @@ yarn-error.log*
 
 
 # Ignore AWS credentials file
-Backend/src/main/java/com/Sandu/FurryFinds/AwsCredentials.java
+Backend/src/main/java/com/Sandu/FurryFinds
