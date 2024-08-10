@@ -1,4 +1,4 @@
-package com.Sandu.FurryFinds.Security;
+package com.Sandu.FurryFinds.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
