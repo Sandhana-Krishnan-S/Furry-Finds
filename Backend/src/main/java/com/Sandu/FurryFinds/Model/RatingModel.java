@@ -17,8 +17,7 @@ public class RatingModel {
 
     private float prodRating;
     private int totalReview;
-    HashMap<Integer , Integer> stars;
 
-//    @OneToOne(mappedBy = "rating")
-//    private ProductModel product;
+    @OneToOne(mappedBy = "rating")
+    private ProductModel product;
 }

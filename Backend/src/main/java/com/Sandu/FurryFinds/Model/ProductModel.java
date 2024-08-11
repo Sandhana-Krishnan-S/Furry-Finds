@@ -24,7 +24,7 @@ public class ProductModel {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Category category = Category.UNDEFINED;
+    private Category category;
 
     @Column(nullable = false)
     private float price;
@@ -33,17 +33,17 @@ public class ProductModel {
     private String prodDescription;
 
     //temp
-    private int totalReview;
-    private float rating;
+//    private int totalReview;
+//    private float rating;
 
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "rating_id", referencedColumnName = "id")
-//    private  RatingModel rating;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "rating_id", referencedColumnName = "id")
+    private  RatingModel rating;
 //
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "description_id" , referencedColumnName = "id")
-//    private DescriptionModel description;
-//
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "description_id" , referencedColumnName = "id")
+    private DescriptionModel description;
+
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "review_id" , referencedColumnName = "id")
 //    private Set<ReviewTable> review;

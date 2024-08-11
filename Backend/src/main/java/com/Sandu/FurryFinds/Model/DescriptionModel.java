@@ -27,6 +27,6 @@ public class DescriptionModel {
     @Column(columnDefinition = "TEXT")
     private Set<String> productDetails;
 
-//    @OneToOne(mappedBy = "description")
-//    private ProductModel product;
+    @OneToOne(mappedBy = "description")
+    private ProductModel product;
 }
