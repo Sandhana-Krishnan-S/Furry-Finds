@@ -1,10 +1,12 @@
 package com.Sandu.FurryFinds.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -20,13 +22,16 @@ public class DescriptionModel {
     private String briefDescription;
 
     @ElementCollection
-    @Column(columnDefinition = "TEXT")
-    private Set<String> benefits;
+    @CollectionTable(name = "description_benefits", joinColumns = @JoinColumn(name = "description_id"))
+    @Column(name = "benefit")
+    private List<String> benefits;
 
     @ElementCollection
-    @Column(columnDefinition = "TEXT")
-    private Set<String> productDetails;
+    @CollectionTable(name = "description_product_details", joinColumns = @JoinColumn(name = "description_id"))
+    @Column(name = "product_detail")
+    private List<String> productDetails;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "description")
     private ProductModel product;
 }

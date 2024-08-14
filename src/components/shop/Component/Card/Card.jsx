@@ -7,12 +7,18 @@ import { useCart } from '../../../../contexts/CartContext'
 import { useWhishList } from '../../../../contexts/WhishListContext'
 import { Slide, toast } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from 'react-router'
 
 export default function Card({item}) {
+  const viewMoreHandler = (event) => {
+    event.stopPropagation();
+    Navigate(`/product/${item.id}`, { state: { item } });
+  };
   const { addItem } = useCart()
   const { wishListId, wishHandler} = useWhishList()
 
   const isWished = wishListId.has(item.id)
+  const Navigate = useNavigate()
   const [istoast, setIsToast] = useState(false)
 
   const cartbtnHandler = (event) => {
@@ -61,12 +67,12 @@ export default function Card({item}) {
           </div>
         </div>
         <div className="item-card-right">
-          <p>${item.price}</p>
+          <p>${item.price}</p>/
         </div>
       </div>
         <div className="item-card-buttons">
           <button className='add-Cart-btn' onClick={cartbtnHandler}>Add to cart</button>
-          <button className='view-more-btn'>View more</button>
+          <button className='view-more-btn' onClick={viewMoreHandler}>View more</button>
         </div>
     </div>
   );

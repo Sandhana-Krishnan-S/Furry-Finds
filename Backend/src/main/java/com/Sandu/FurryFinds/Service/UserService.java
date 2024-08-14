@@ -68,4 +68,8 @@ public class UserService {
             }
         return new ResponseEntity<>("Invalid credentials" ,HttpStatus.UNAUTHORIZED);
     }
+
+    public ResponseEntity<?> getUsers() {
+        return new ResponseEntity<>(repository.findAll() , HttpStatus.OK);
+    }
 }

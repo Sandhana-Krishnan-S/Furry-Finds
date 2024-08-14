@@ -12,7 +12,7 @@ import { Flip, ToastContainer } from 'react-toastify';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <AuthProvider>
       <CartProvider>
         <WishListProvider>
@@ -33,7 +33,7 @@ root.render(
         </WishListProvider>
       </CartProvider>
     </AuthProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

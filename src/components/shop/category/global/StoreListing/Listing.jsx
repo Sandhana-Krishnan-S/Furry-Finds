@@ -5,7 +5,7 @@ import Card from '../../../Component/Card/Card'
 import { fetchDataByCategory } from './axios/fetchByCategory'
 
 export default function Listing({ category }) {
-  const itemPerPage = 16
+  const itemPerPage = 8
   const [currentPage, setCurrentPage] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
@@ -16,6 +16,7 @@ export default function Listing({ category }) {
     try {
       const responce = await fetchDataByCategory(category, currentPage, itemPerPage)
       if (responce.status) {
+        console.log(responce.data)
         setData([...responce.data])
         setTotalPages(responce.totalPages)
       }

@@ -14,25 +14,29 @@ import Cart from '../components/global/Cart/Cart'
 import WishList from '../components/global/wishList/WishList'
 import SingleProduct from '../components/shop/Component/products/SingleProduct'
 import FileUpload from '../Test/FileUpload'
+import Checkout from '../components/global/Cart/checkout/CheckOut'
+import AdminDashboard from '../components/admin/AdminDashBoard'
 
 export default function Router() {
   return (
     <BrowserRouter>
         <Routes>
-            <Route path='/' element = {<Home />} />
-            <Route path='/login' element = {<LoginMain />} />
-            <Route path='/signup' element = {<SignUpMain />} />
-            <Route path='/shop' element = {<Shop />} />
-            <Route path='/shop/pets' element = {<Pets />} />
-            <Route path='/shop/accessory' element = {<Accessory />} />
-            <Route path='/shop/gadget' element = {<Gadget />} />
-            <Route path='/shop/food' element = {<FoodStore />} />
-            <Route path='/shop/aquatic' element = {<Aquatic />} />
-            <Route path='/cart' element = {<Cart />} />
-            <Route path='/wishlist' element = {<WishList />} />
-            <Route path='/about' element = {<AboutUs />} />
-            <Route path='/test/product' element = {<SingleProduct />} />
-            <Route path='/test/fileUpload' element = {<FileUpload />} />
+        <Route path='/' element={<Home />} />
+            <Route path='/login' element={<LoginMain />} />
+            <Route path='/signup' element={<SignUpMain />} />
+            <Route path='/shop' element={<Shop />} />
+            <Route path='/shop/pets' element={<Pets />} />
+            <Route path='/shop/accessory' element={<Accessory />} />
+            <Route path='/shop/gadget' element={<Gadget />} />
+            <Route path='/shop/food' element={<FoodStore />} />
+            <Route path='/shop/aquatic' element={<Aquatic />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/wishlist' element={<WishList />} />
+            <Route path='/about' element={<AboutUs />} />
+            <Route path='/product/:id' element={<SingleProduct />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path='/test/fileUpload' element={<FileUpload />} />
         </Routes>
     </BrowserRouter>
   )

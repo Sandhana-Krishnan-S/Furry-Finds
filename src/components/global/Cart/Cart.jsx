@@ -16,6 +16,7 @@ export default function Cart() {
         0
     )
 
+
     return (
         <>
             <NavBar />

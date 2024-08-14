@@ -6,6 +6,7 @@ import { useCart } from '../../../../contexts/CartContext'
 
 export default function CartCard({ item }) {
     const { removeItem , increase , decrease} = useCart()
+    console.log(item)
 
     return (
         <div className='cart-card'>
@@ -18,9 +19,9 @@ export default function CartCard({ item }) {
                     <p>{item.prodDescription}</p>
                     <div className="ratings-item">
                         <div className="rating-stars">
-                            <Rating readonly={true} initialValue={item.rating || 4.5} allowFraction size={20} />
+                            <Rating readonly={true} initialValue={item.rating || 4} allowFraction size={20} />
                         </div>
-                        <div className="rating-count"><p>({item.totalReview})</p></div>
+                        <div className="rating-count"><p>({item.totalReview || 132})</p></div>
                     </div>
                     <h4>${item.price}</h4>
                 </div>

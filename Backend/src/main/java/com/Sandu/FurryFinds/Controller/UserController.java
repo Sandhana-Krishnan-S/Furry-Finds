@@ -24,6 +24,11 @@ public class UserController {
         return service.login(user);
     }
 
+    @GetMapping("/get-all")
+    public  ResponseEntity<?> getAllUser() {
+        return service.getUsers();
+    }
+
     @DeleteMapping("deleteAcc")
     public  ResponseEntity<?> deleteUserAccount(@RequestBody UserModel user) {
         return service.deleteAcc(user);

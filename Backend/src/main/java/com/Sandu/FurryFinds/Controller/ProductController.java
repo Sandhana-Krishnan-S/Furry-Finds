@@ -52,4 +52,9 @@ public class ProductController {
     public ResponseEntity<?> getProductByCategory(@PathVariable ProductModel.Category category , @PathVariable int pageNo , @PathVariable int pageSize ) {
         return service.getProductByCategory(category , pageNo , pageSize);
     }
+
+    @PostMapping("/add-review")
+    public ResponseEntity<?> addReview(@RequestParam Long id , @RequestBody ReviewTable review , @RequestParam Long userId) {
+        return service.addReview(id, userId , review);
+    }
 }

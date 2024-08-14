@@ -1,5 +1,6 @@
 package com.Sandu.FurryFinds.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,24 +18,26 @@ public class ReviewTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column
     private int star = 0;
 
-    @Column(nullable = false, length = 255)
+    @Column(length = 255)
     private String reviewTitle;
 
     @Column(columnDefinition = "TEXT")
     private String reviewDescription;
 
-    @Column(name = "reviewed_at", nullable = false)
+    @Column(name = "reviewed_at")
     private LocalDateTime reviewedAt = LocalDateTime.now();
 //
-//    @ManyToOne
-//    @JoinColumn(name = "user_id", nullable = false)
-//    private UserModel user;
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
+    private UserModel user;
 //
-//    @ManyToOne
-//    @JoinColumn(name = "product_id" , nullable = false)
-//    private ProductModel product;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private ProductModel product;
 
 }

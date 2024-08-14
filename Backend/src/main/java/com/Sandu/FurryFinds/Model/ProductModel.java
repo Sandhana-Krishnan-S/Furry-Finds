@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 @Getter
@@ -38,15 +40,15 @@ public class ProductModel {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "rating_id", referencedColumnName = "id")
-    private  RatingModel rating;
+    private RatingModel rating;
 //
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "description_id" , referencedColumnName = "id")
     private DescriptionModel description;
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "review_id" , referencedColumnName = "id")
-//    private Set<ReviewTable> review;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "review_id" , referencedColumnName = "id")
+    private List<ReviewTable> review;
 
     public enum Category {
         PET, ACCESSORY, GADGET, FOOD, AQUATIC, UNDEFINED

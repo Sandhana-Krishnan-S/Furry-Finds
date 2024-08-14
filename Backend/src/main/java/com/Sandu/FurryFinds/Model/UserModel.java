@@ -1,5 +1,6 @@
 package com.Sandu.FurryFinds.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,8 +47,9 @@ public class UserModel {
         this.updatedAt = LocalDateTime.now();
     }
 
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<ReviewTable> reviews;
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ReviewTable> reviews;
 
     public enum UserRole {
         CUSTOMER, ADMIN, SELLER

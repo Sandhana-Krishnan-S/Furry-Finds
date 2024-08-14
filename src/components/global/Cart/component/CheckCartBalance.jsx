@@ -2,10 +2,14 @@ import React from 'react'
 import { useCart } from '../../../../contexts/CartContext'
 import arrowIcon from '../../../../assets/images/Arrow.png'
 import './style/CheckCartBalance.css'
+import { useNavigate } from 'react-router'
 
 export default function CheckCartBalance() {
+    const navigate = useNavigate()
     const { cartItems } = useCart()
-
+    const handleCheckout = () => {
+        navigate('/checkout');
+    }
     const subTotal = cartItems.reduce(
         (total, item) => (total = total + item.price * item.count),
         0
@@ -38,7 +42,7 @@ export default function CheckCartBalance() {
             </li>
         </ul>
         <button className='CheckCartBalance-checkout-btn'>
-            <div>
+            <div onClick={handleCheckout}>
                 <p>Checkout</p>
                 <img src={arrowIcon} alt="" />
             </div>

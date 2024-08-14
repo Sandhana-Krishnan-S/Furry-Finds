@@ -3,12 +3,12 @@ package com.Sandu.FurryFinds.Service;
 import com.Sandu.FurryFinds.AwsCredentials;
 import com.Sandu.FurryFinds.Config.S3Config;
 import com.Sandu.FurryFinds.Model.ProductModel;
+import com.Sandu.FurryFinds.Model.ReviewTable;
+import com.Sandu.FurryFinds.Model.UserModel;
 import com.Sandu.FurryFinds.Repository.ProductRepository;
+import com.Sandu.FurryFinds.Repository.UserRepository;
 import com.amazonaws.services.s3.AmazonS3;
-import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,11 +20,16 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class ProductService {
     @Autowired
     private ProductRepository repository;
+
+    @Autowired
+    private UserRepository userRepository;
+
 //    public ResponseEntity<?> addProduct(ProductModel request) {
 //        try {
 //            System.out.println(request.getImgVal());
@@ -68,7 +73,7 @@ public class ProductService {
            ProductModel res = repository.save(product);
            convertedImage.delete();
 //           return new ResponseEntity<>("Success" +  , HttpStatus.OK);
-           return new ResponseEntity<>(HttpStatus.CREATED);
+           return new ResponseEntity<>(res , HttpStatus.CREATED);
        } catch (IOException e) {
            return  new ResponseEntity<>("Failed to Create a product, Error :"  + e.getMessage() , HttpStatus.CONFLICT);
        }
@@ -84,5 +89,28 @@ public class ProductService {
             }
         }
         return convertedFile;
+    }
+
+    public ResponseEntity<?> addReview(Long id, Long userId, ReviewTable review) {
+        Optional<ProductModel> exist = repository.findById(id);
+        Optional<UserModel> user =userRepository.findById(userId);
+        if(exist.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        if(user.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        ProductModel product = exist.get();
+        List<ReviewTable> reviews = product.getReview();
+        UserModel userModel = user.get();
+        List<ReviewTable> UserReviews = userModel.getReviews();
+        reviews.add(review);
+        review.setUser(userModel);
+        product.setReview(reviews);
+        UserReviews.add(review);
+        userModel.setReviews(UserReviews);
+        repository.save(product);
+        userRepository.save(userModel);
+        return new ResponseEntity<>("Sucess" , HttpStatus.OK);
     }
 }
