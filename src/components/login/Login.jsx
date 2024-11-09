@@ -26,6 +26,7 @@ export default function Login() {
         setErr(response.message)
       }
     } catch (error) {
+      console.log(error)
       setErr('An unexpected error occurred. Please try again.')
     }
   }

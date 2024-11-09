@@ -21,7 +21,9 @@ export const WishListProvider = ({ children }) => {
                 console.log(user.userId)
                 const response = await axios.get(`http://localhost:8080/api/wish-list/get?userId=${user.userId}`);
                 if (response.status === 200) {
+                    console.log(response)
                     const data = response.data;
+                    console.log(data)
                     setWishList(data);
                     setWishListId(new Set(data.map(item => item.id)));
                 }
@@ -40,6 +42,8 @@ export const WishListProvider = ({ children }) => {
         try {
             const response = await axios.post(url);
             if (response.status === 200) {
+                console.log(response.data)
+                console.log(response.data.product)
                 setWishList((previousItems) => [...previousItems, item]);
                 setWishListId((prevSet) => new Set(prevSet).add(item.id));
             }
